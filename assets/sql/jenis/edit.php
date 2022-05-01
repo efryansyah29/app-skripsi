@@ -1,0 +1,22 @@
+<?php
+session_start();
+include('../koneksi.php');
+$base_url = "../../../";
+if(!isset($_SESSION['username']) AND !isset($_SESSION['status']) AND !isset($_SESSION['role'])){
+    echo "<script>alert('Login dahulu !!!');window.location='{$base_url}index.php'</script>";
+}
+
+
+
+if($_SESSION['role']!='1'){
+    echo "<script>alert('Akses ditolak !!!');window.location='{$base_url}app/index.php'</script>";
+}else{
+    $a = $_POST['id_jenis'];
+    $b = $_POST['nama'];
+    $query = mysqli_query($koneksi,"UPDATE jenis SET nama_jenis='$b' WHERE id_jenis='$a'");
+    if($query){
+        echo "<script>alert('Berhasil diubah !!!');window.location='{$base_url}app/index.php'</script>";
+    }
+}
+
+?>
