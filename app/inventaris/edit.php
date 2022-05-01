@@ -41,7 +41,6 @@ include '../../assets/sql/koneksi.php';
                 $jumlah_user = mysqli_num_rows($data_user);
 
 
-
 ?>
     <head>
         <meta charset="utf-8" />
