@@ -286,10 +286,30 @@ include '../../assets/sql/koneksi.php';
                         <div class="card mb-4">
                             <div class="card-header">Edit Data Inventaris</div>
                             <div class="card-body">
-                                
-                             
-                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
-                                
+                            <label for="exampleFormControlInput1" class="form-label">Id Inventaris</label>
+                            <input class="form-control" type="text" value="<?= $tampil['id_inventaris'];?>" aria-label="Disabled input example" disabled readonly>
+                            <label for="exampleFormControlInput1" class="form-label">Nama Barang</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            <label for="exampleFormControlInput1" class="form-label">Kondisi</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            <label for="exampleFormControlInput1" class="form-label">Tanggal</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            <label for="exampleFormControlInput1" class="form-label">Jenis</label>
+                                <select class="form-select" aria-label="Default select example">
+                                <?php
+                                   $ruang=mysqli_query($koneksi,"SELECT * FROM ruang");
+                                    while($tampilruang= mysqli_fetch_array($ruang)):
+                                ?>
+                                 <option value="<?= $tampilruang['id_ruang'];?>"
+                                    <?php if($tampilruang['id_ruang']==$tampil['id_ruang']){echo 'selected';}?>>
+                                      <?= $tampilruang['nama_ruang'];?>
+                              </option> <?php
+                            endwhile;
+                                ?>
+                                     
+                                </select>
+                            <label for="exampleFormControlInput1" class="form-label">Ruang</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                             </div>
                         </div>
 <div class="kotak mt-3 mx-auto mb-4" style="width:70%;">
