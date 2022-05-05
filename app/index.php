@@ -2,6 +2,7 @@
 $base_url= "../";
 $judul = "Home";
 $breadcumb ="Home";
+include 
 ?>
 
 <!DOCTYPE html>
