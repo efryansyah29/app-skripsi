@@ -1,3 +1,9 @@
+<?php
+error_reporting(0);
+$judul = "Daftar akun PSNP";
+include('assets/login/header.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +25,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assets/login/css/util.css">
 	<link rel="stylesheet" type="text/css" href="assets/login/css/main.css">
-	<script src="https://kit.fontawesome.com/83a6dbb254.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/83a6dbb254.js" crossorigin="anonymous"></script>
 <!--===============================================================================================-->
 </head>
 <?php
@@ -35,38 +41,57 @@ include('assets/login/header.php');
 					<img src="assets/login/images/dishublogo.png" alt="IMG">
 				</div>
 
-				<form action="assets/sql/login/ceklogin.php" method="POST" class="login100-form validate-form">
+				<form action="assets/sql/login/daftarakun.php" method="POST" class="login100-form validate-form">
 					<span class="login100-form-title">
-						Pegawai Login
+						Daftar Akun
 					</span>
 
 					<div class="wrap-input100 validate-input">
-						<input class="input100" type="username" name="username" placeholder="Email">
+						<input class="input100" type="text" name="nama" placeholder="Masukkan Nama" REQUIRED>
+
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
+                        <i class="fa-solid fa-address-card"></i>
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="password" placeholder="Password">
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="number" name="kontak" placeholder="Masukkan Nomor Handphone" REQUIRED>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
+                        <i class="fa-solid fa-mobile"></i>
+						</span>
+					</div>
+
+                    <div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="username" placeholder="Masukkan Username" REQUIRED>
+
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+                        <i class="fa-solid fa-user-lock"></i>
+						</span>
+					</div>
+
+                    <div class="wrap-input100 validate-input">
+						<input class="input100" type="password" name="password" placeholder="Masukkan Password" REQUIRED>
+
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
 					
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Daftar
 						</button>
 					</div>
 
 					
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="daftar.php">
-							Daftar Akun Baru
+						<a class="txt2" href="index.php">
+							Sudah Memiliki akun? Silahkan Login
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>
@@ -97,3 +122,6 @@ include('assets/login/header.php');
 
 </body>
 </html>
+<?php
+include('assets/templates/login/footer.php');
+?>
