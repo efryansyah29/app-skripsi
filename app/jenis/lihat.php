@@ -5,7 +5,7 @@ $base_url= "../../";
 $judul = "Lihat jenis";
 $breadcumb ="Jenis > Lihat";
 $adminonly = 1;
-include('../../assets/templates/app/header.php');
+include('../../assets/app/dashboard.php');
 if(isset($_GET['cari'])){
     $cari = $_GET['cari'];
     $queryjenis = mysqli_query($koneksi,"SELECT * FROM jenis WHERE nama_jenis LIKE '%$cari%'");
@@ -24,27 +24,37 @@ if(isset($_GET['cari'])){
 }     
 ?>
 
-<h2 class="center mt-1 mb-1">List Jenis</h2>
-
-<div class="pencarian">
-    <table>
-        <tr>
-            <form action="" method="GET">
-                <td><input type="text" name="cari" placeholder="Masukkan kata kunci"></td>
-                <td><button><a href="">Cari</a></button></td>
-            </form>
-        </tr>
-    </table>
-</div>
-<div class="clear"></div>
-<table class="table table-berborder table-garis mx-auto center table-hover table-responsif" style="width: 60%;">
-    <thead class="kepala-dark">
-        <tr>
+<div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Tables</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Tables</li>
+                        </ol>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
+                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
+                                .
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                DataTable Example
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
             <th>#</th>
-            <th>Nama jenis</th>
+            <th>Nama Jenis</th>
             <th>Aksi</th>
+
         </tr>
     </thead>
+
     <tbody>
         <?php
             while($tampiljenis = mysqli_fetch_array($queryjenis)):
@@ -53,9 +63,9 @@ if(isset($_GET['cari'])){
             <td><?= $no;?></td>
             <td><?= $tampiljenis['nama_jenis'];?></td>
             <td>
-                <button class="button button-kuning"><a
+                <a class="btn btn-warning"
                         href="<?= $base_url;?>app/jenis/edit.php?id_jenis=<?= $tampiljenis['id_jenis'];?>">Edit</a></button>
-                <button class="button button-merah"><a
+                <a class="btn btn-danger"
                         href="<?= $base_url;?>assets/sql/jenis/hapus.php?id_jenis=<?= $tampiljenis['id_jenis'];?>">Hapus</a></button>
             </td>
         </tr>
@@ -102,6 +112,7 @@ if(isset($_GET['cari'])){
         <?php endif; ?>
     </ul>
 </nav>
+        </div>
 
 
 <?php

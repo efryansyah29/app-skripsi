@@ -41,6 +41,10 @@ include '../assets/sql/koneksi.php';
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
         <link href="<?= $base_url;?>assets/app/css/styles.css" rel="stylesheet" />
         <script src="https://kit.fontawesome.com/83a6dbb254.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.css"/>
+ 
+
+
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -86,7 +90,7 @@ include '../assets/sql/koneksi.php';
                             </div>
                             <div class="sb-sidenav-menu-heading">Inventaris</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDataBarang" aria-expanded="false" aria-controls="collapseDataBarang">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-laptop-file"></i></i></div>
                                 Data Barang
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -108,7 +112,7 @@ include '../assets/sql/koneksi.php';
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRuang" aria-expanded="false" aria-controls="collapseRuang">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-house-circle-check"></i></i></div>
                                 Data Ruang
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -120,7 +124,7 @@ include '../assets/sql/koneksi.php';
                             </div>
                             <div class="sb-sidenav-menu-heading">Fitur</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDataPengembalian" aria-expanded="false" aria-controls="collapseDataPengembalian">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-hand-holding-hand"></i></div>
                                 Pengembalian
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -131,7 +135,7 @@ include '../assets/sql/koneksi.php';
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDataPeminjaman" aria-expanded="false" aria-controls="collapseDataPeminjaman">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-hand-holding"></i></div>
                                 Peminjaman
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -188,12 +192,15 @@ include '../assets/sql/koneksi.php';
                     </div>
                 </nav>
             </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="<?= $base_url;?>assets/app/js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
         <script src="<?= $base_url;?>assets/app/js/datatables-simple-demo.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.js"></script>
     </body>
 </html>
