@@ -25,7 +25,7 @@ $tampil = mysqli_fetch_array($cek)
                         </ol>
                    
                         <div class="card mb-4">
-                        <form action="../../assets/sql/jenis/edit.php" method="POST">
+                        <form action="../../assets/sql/akun/edit.php" method="POST">
                         <div class="card-header">Edit Data Inventaris</div>
                             <div class="card-body">
                             

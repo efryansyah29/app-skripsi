@@ -60,7 +60,7 @@ include '../assets/sql/koneksi.php';
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="<?= $base_url;?>app/gantipassword.php">Ganti password</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="../assets/sql/keluar.php">Logout</a></li>
+                        <li><a class="dropdown-item" href="<?= $base_url;?>/assets/sql/keluar.php">Logout</a></li>
                     </ul>
                 </li>
             </ul>
