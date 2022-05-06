@@ -5,24 +5,36 @@ $base_url= "../../";
 $judul = "Tambah jenis";
 $breadcumb ="Jenis > Tambah";
 $adminonly = 1;
-include('../../assets/templates/app/header.php');
+include('../../assets/app/dashboard.php');
 ?>
 
-<div class="kotak mt-3 mx-auto" style="width:70%;">
-    <div class="kotak-kepala center">
-        <h2>Tambah data jenis</h2>
-    </div>
-    <div class="kotak-badan mt-2">
-        <form action="../../assets/sql/jenis/tambah.php" method="POST">
-            <div class="form-isi">
-                <p>Nama jenis</p>
-                <input type="text" name="nama" class="form-input" placeholder="Masukkan nama jenis">
-            </div>
-            <input type="submit" value="Tambah" class="form-submit mx-auto">
-        </form>
-    </div>
-</div>
 
+<div id="layoutSidenav_content">
+    <main>
+<div class="container-fluid px-4">
+                        <h1 class="mt-4">Tables</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Edit Inventaris</li>
+                        </ol>
+                   
+                        <div class="card mb-4">
+                        <form action="../../assets/sql/jenis/tambah.php" method="POST">
+                        <div class="card-header">Edit Data Inventaris</div>
+                            <div class="card-body">
+                            
+                            <label for="exampleFormControlInput1" class="form-label">Nama Jenis</label>
+                            <input type="text" name="nama" class="form-control" placeholder="Masukkan nama jenis">
+                            
+                           <div style="text-align:center;"><br>
+                           <input type="submit" value="Tambah" class="btn btn-primary" >
+                        </div>
+                        </div>
+                        </form>
+                        </div>
+                </main>
+
+                </div>
 <?php
 include('../../assets/templates/app/footer.php');
 ?>

@@ -61,9 +61,9 @@ if(isset($_GET['cari'])){
             <td><?= $no;?></td>
             <td><?= $tampilruang['nama_ruang'];?></td>
             <td>
-                <button class="button button-kuning"><a
+                <a class="btn btn-warning"
                         href="<?= $base_url;?>app/ruang/edit.php?id_ruang=<?= $tampilruang['id_ruang'];?>">Edit</a></button>
-                <button class="button button-merah"><a
+                <a class="btn btn-danger"
                         href="<?= $base_url;?>assets/sql/ruang/hapus.php?id_ruang=<?= $tampilruang['id_ruang'];?>">Hapus</a></button>
             </td>
         </tr>
