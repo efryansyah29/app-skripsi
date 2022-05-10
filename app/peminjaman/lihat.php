@@ -4,7 +4,7 @@ include('../../assets/sql/koneksi.php');
 $base_url= "../../";
 $judul = "Lihat Peminjaman";
 $breadcumb ="Peminjaman > Lihat";
-include('../../assets/templates/app/header.php');
+include('../../assets/app/dashboard.php');
 $ambilnama = $_SESSION['username'];
 $ambilrole = $_SESSION['role'];
 if($_SESSION['role']==3){
@@ -42,21 +42,30 @@ if($_SESSION['role']==3){
 }
 ?>
 
-<h2 class="center mt-1 mb-1">List peminjaman</h2>
 
-<div class="pencarian">
-    <table>
-        <tr>
-            <form action="" method="GET">
-                <td><input type="text" name="cari" placeholder="Masukkan kata kunci"></td>
-                <td><button><a href="">Cari</a></button></td>
-            </form>
-        </tr>
-    </table>
-</div>
-<div class="clear"></div>
-<table class="table table-berborder table-garis mx-auto center table-hover table-responsif" style="width: 60%;">
-    <thead class="kepala-dark">
+<div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Tables</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Tables</li>
+                        </ol>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
+                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
+                                .
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                DataTable Example
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                <thead class="kepala-dark">
         <tr>
             <th>#</th>
             <th>Nama barang</th>
@@ -67,6 +76,7 @@ if($_SESSION['role']==3){
             <th>Aksi</th>
         </tr>
     </thead>
+
     <tbody>
         <?php
             while($tampilpeminjaman = mysqli_fetch_array($querypeminjaman)):
@@ -105,42 +115,6 @@ if($_SESSION['role']==3){
         ?>
     </tbody>
 </table>
-
-<nav class="mt-2 mb-4">
-    <ul class="halaman konten-tengah">
-
-        <?php if($halamansekarang >1): ?>
-        <li class="item-halaman"><a href="?halaman=<?= $halamansekarang-1;?>" class="link-halaman">Sebelumnya</a></li>
-        <?php else :?>
-        <li class="item-halaman disabled"><a href="?halaman=<?= $halamansekarang-1;?>"
-                class="link-halaman">Sebelumnya</a></li>
-        <?php endif; ?>
-
-        <?php for($i=1;$i<= ($jumlahhalaman);$i++): ?>
-        <?php if($i == $halamansekarang): ?>
-
-        <li class="item-halaman active"><a href="?halaman=<?= $i;?>" class="link-halaman"><?= $i;?></a></li>
-
-        <?php else : ?>
-
-        <li class="item-halaman"><a href="?halaman=<?= $i;?>" class="link-halaman"><?= $i;?></a></li>
-
-        <?php
-        endif;
-        ?>
-
-        <?php
-        endfor;
-        ?>
-
-        <?php if($halamansekarang < $jumlahhalaman): ?>
-        <li class="item-halaman"><a href="?halaman=<?= $halamansekarang+1;?>" class="link-halaman">Selanjutnya</a></li>
-        <?php else : ?>
-        <li class="item-halaman disabled"><a href="?halaman=<?= $halamansekarang+1;?>"
-                class="link-halaman">Selanjutnya</a></li>
-        <?php endif; ?>
-    </ul>
-</nav>
 
 
 <?php

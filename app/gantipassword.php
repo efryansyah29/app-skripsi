@@ -4,40 +4,46 @@ include('../assets/sql/koneksi.php');
 $base_url= "../";
 $judul = "Ganti password";
 $breadcumb ="Password > Ubah";
-include('../assets/templates/app/header.php');
+include('../assets/app/dashboard.php');
 
 $ambil = $_SESSION['username'];
 $cek = mysqli_query($koneksi,"SELECT * FROM user WHERE username='$ambil'");
 $tampil = mysqli_fetch_array($cek)
 ?>
 
-<div class="kotak mt-3 mx-auto mb-4" style="width:70%;">
-    <div class="kotak-kepala center">
-        <h2>Ganti password</h2>
-    </div>
-    <div class="kotak-badan mt-2">
-        <form action="../assets/sql/gantipassword.php" method="POST">
-            <div class="form-isi">
-                <input type="hidden" name="username" value="<?= $tampil['username'];?>">
-                <p>Username</p>
-                <small class="form-input"><?= $tampil['username'];?></small>
-            </div>
-            <div class="form-isi">
-                <p>Password lama</p>
-                <input type="password" name="password_lama" class="form-input" placeholder="Masukkan password lama">
-            </div>
-            <div class="form-isi">
-                <p>Password baru</p>
-                <input type="password" name="password_baru" class="form-input" placeholder="Masukkan password baru">
-            </div>
-            <div class="form-isi">
-                <p>Konfirmasi password baru</p>
-                <input type="password" name="konfirmasi_baru" class="form-input" placeholder="Konfirmasi password baru">
-            </div>
-            <input type="submit" value="Ganti" class="form-submit mx-auto">
-        </form>
-    </div>
-</div>
+<div id="layoutSidenav_content">
+<main>
+
+    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Tables</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Edit Inventaris</li>
+                        </ol>
+                   
+                        <div class="card mb-4">
+                        <form action="../assets/sql/gantipassword.php" method="POST">
+                        <div class="card-header">Ganti Password</div>
+                            <div class="card-body">
+                            
+                            <label for="exampleFormControlInput1" class="form-label">Username</label>
+                            <input class="form-control" type="text"name="username" value="<?= $tampil['username'];?>" readonly >
+                            <label for="exampleFormControlInput1" class="form-label">Password Lama</label>
+                            <input type="password" name="password_lama" class="form-control" placeholder="Masukkan password lama">
+                            <label for="exampleFormControlInput1" class="form-label">Password Baru</label>
+                            <input type="password" name="password_baru" class="form-control" placeholder="Masukkan password baru">
+                            <label for="exampleFormControlInput1" class="form-label">Konfirmasi Password Baru</label>
+                            <input type="password" name="konfirmasi_baru" class="form-control" placeholder="Konfirmasi password baru">
+                            
+                           <div style="text-align:center;"><br>
+                           <input type="submit" value="Ubah" class="btn btn-primary">
+                        </div>
+                        </div>
+                        </form>
+                        </div>
+
+
+
 <?php
 include('../assets/templates/app/footer.php');
 ?>

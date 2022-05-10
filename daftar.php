@@ -3,7 +3,6 @@ error_reporting(0);
 $judul = "Daftar akun PSNP";
 include('assets/login/header.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
