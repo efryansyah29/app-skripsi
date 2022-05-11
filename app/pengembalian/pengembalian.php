@@ -28,15 +28,15 @@ $tampilinventaris=mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM invent
                         <div class="card-header">Edit Data Inventaris</div>
                             <div class="card-body">
                             <label for="exampleFormControlInput1" class="form-label">Id Peminjaman</label>
-                            <input class="form-control"  value="<?= $tampil['id_peminjaman'];?>" readonly >
+                            <input class="form-control" name="id_inventaris" value="<?= $tampil['id_peminjaman'];?>" readonly >
                             <label for="exampleFormControlInput1" class="form-label">Nama Barang</label>
-                            <input class="form-control" value="<?= $tampilinventaris['nama_barang'];?>" readonly >
+                            <input class="form-control" name="inventaris" value="<?= $tampilinventaris['nama_barang'];?>" readonly >
                             <label for="exampleFormControlInput1" class="form-label">Tanggal Pinjam</label>
-                            <input class="form-control" value="<?= $tampil['tanggal_pinjam'];?>" readonly >
+                            <input class="form-control" name="tanggal_pinjam" value="<?= $tampil['tanggal_pinjam'];?>" readonly >
                             <label for="exampleFormControlInput1" class="form-label">Tanggal Kembali</label>
                             <input type="date" class="form-control" name="tanggal_kembali">
                             <label for="exampleFormControlInput1" class="form-label">Jumlah</label>
-                            <input class="form-control" value="<?= $tampil['jumlah'];?>" readonly >
+                            <input class="form-control" name="jumlah" value="<?= $tampil['jumlah'];?>" readonly >
                             
                            <div style="text-align:center;"><br>
                            <input type="submit" value="Terima" class="btn btn-primary" >
