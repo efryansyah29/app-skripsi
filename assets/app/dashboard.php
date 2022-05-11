@@ -132,6 +132,7 @@ include '../assets/sql/koneksi.php';
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="'.$base_url.'app/pengembalian/index.php">Lihat Data</a>
                                     <a class="nav-link" href="'.$base_url.'app/pengembalian/pengembalian.php">Tambah Data</a>
+                                    <a class="nav-link" href="'.$base_url.'app/laporan/index.php">Laporan Pengembalian</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDataPeminjaman" aria-expanded="false" aria-controls="collapseDataPeminjaman">

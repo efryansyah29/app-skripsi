@@ -28,7 +28,7 @@ $tampilinventaris=mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM invent
                         <div class="card-header">Edit Data Inventaris</div>
                             <div class="card-body">
                             <label for="exampleFormControlInput1" class="form-label">Id Peminjaman</label>
-                            <input class="form-control" name="id_inventaris" value="<?= $tampil['id_peminjaman'];?>" readonly >
+                            <input class="form-control" name="id_peminjaman" value="<?= $tampil['id_peminjaman'];?>" readonly >
                             <label for="exampleFormControlInput1" class="form-label">Nama Barang</label>
                             <input class="form-control" name="inventaris" value="<?= $tampilinventaris['nama_barang'];?>" readonly >
                             <label for="exampleFormControlInput1" class="form-label">Tanggal Pinjam</label>

@@ -5,7 +5,7 @@ $base_url= "../../";
 $judul = "Laporan";
 $breadcumb ="Laporan";
 $adminonly =1;
-include('../../assets/templates/app/header.php');
+include('../../assets/app/dashboard.php');
 $ambilnama = $_SESSION['username'];
 $ambilrole = $_SESSION['role'];
 
@@ -29,66 +29,31 @@ $jumlahpengguna = mysqli_num_rows(mysqli_query($koneksi,"SELECT * FROM user WHER
 $keseluruhan = mysqli_num_rows(mysqli_query($koneksi,"SELECT * FROM peminjaman"));
 $datapinjam = mysqli_num_rows(mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE tanggal_kembali ='0000-00-00'"));
 ?>
-<nav class="laporan">
-    <div class="kotakan mx-auto">
-        <div class="kotak ml-1 mt-4">
-            <div class="kotak-kepala center"><b>
-                    <h4>Jumlah pengguna</>
-                </b></div>
-            <div class="kotak-badan center">
-                <i>
-                    <h3 class="mt-2"><?= $jumlahpengguna;?> Data</h3>
-                </i>
-            </div>
-        </div>
-        <div class="kotak ml-1 mt-4">
-            <div class="kotak-kepala center"><b>
-                    <h4>Jumlah data inventaris</>
-                </b></div>
-            <div class="kotak-badan center">
-                <i>
-                    <h3 class="mt-2"><?= $ambilinventaris;?> Data</h3>
-                </i>
-            </div>
-        </div>
-        <div class="kotak ml-1 mt-4">
-            <div class="kotak-kepala center"><b>
-                    <h4>Jumlah data barang yang masih dipinjam</>
-                </b></div>
-            <div class="kotak-badan center">
-                <i>
-                    <h3 class="mt-2"><?= $datapinjam;?> Data</h3>
-                </i>
-            </div>
-        </div>
-        <div class="kotak ml-1 mt-4">
-            <div class="kotak-kepala center"><b>
-                    <h4>Jumlah keseluruhan data yang dipinjam</>
-                </b></div>
-            <div class="kotak-badan center">
-                <i>
-                    <h3 class="mt-2"><?= $keseluruhan;?> Data</h3>
-                </i>
-            </div>
-        </div>
 
-    </div>
-    <div class="clear"></div>
-    <h2 class="center mt-4 mb-1">List Barang Yang Sudah Dikembalikan</h2>
-    <div class="pencarian">
-        <table>
-            <tr>
-                <form action="" method="GET">
-                    <td><input type="text" name="cari" placeholder="Masukkan kata kunci"></td>
-                    <td><button><a href="">Cari</a></button></td>
-                </form>
-            </tr>
-        </table>
-    </div>
-    <div class="clear"></div>
-    <table class="table table-berborder table-garis mx-auto center table-hover table-responsif">
-        <thead class="kepala-dark">
-            <tr>
+    <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Tables</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Tables</li>
+                        </ol>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
+                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
+                                .
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                DataTable Example
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                <thead class="kepala-dark">
+        <tr>
                 <th>#</th>
                 <th>Nama barang</th>
                 <th>Tanggal pinjam</th>
@@ -98,8 +63,9 @@ $datapinjam = mysqli_num_rows(mysqli_query($koneksi,"SELECT * FROM peminjaman WH
                 <th>Dikelola oleh</th>
                 <th class="aksi">Aksi</th>
             </tr>
-        </thead>
-        <tbody>
+    </thead>
+
+    <tbody>
             <?php
             while($tampillaporan = mysqli_fetch_array($querylaporan)):
                 $idinventaris = $tampillaporan['id_inventaris'];
@@ -126,7 +92,7 @@ $datapinjam = mysqli_num_rows(mysqli_query($koneksi,"SELECT * FROM peminjaman WH
             endwhile;
         ?>
         </tbody>
-    </table>
+</table>
 
     <nav class="mt-2 mb-4">
         <ul class="halaman konten-tengah">
