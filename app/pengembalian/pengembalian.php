@@ -5,7 +5,7 @@ $base_url= "../../";
 $judul = "Pengembalian barang";
 $breadcumb ="Pengembalian > Pengembalian barang";
 $operatorakses = 1;
-include('../../assets/templates/app/header.php');
+include('../../assets/app/dashboard.php');
 
 $ambilid = $_GET['id_peminjaman'];
 $tampil = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE id_peminjaman='$ambilid'"));
@@ -14,37 +14,39 @@ $tampil = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM peminjaman WHE
 $tampilinventaris=mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM inventaris ORDER BY nama_barang"));
 ?>
 
-<div class="kotak mt-3 mb-4 mx-auto" style="width:70%;">
-    <div class="kotak-kepala center">
-        <h2>Pengembalian barang</h2>
-    </div>
-    <div class="kotak-badan mt-2">
-        <form action="../../assets/sql/pengembalian/edit.php" method="POST">
-            <div class="form-isi">
-                <input type="hidden" name="id_peminjaman" value="<?= $tampil['id_peminjaman'];?>">
-                <p>Id peminjaman</p>
-                <small class="form-input"><?= $tampil['id_peminjaman'];?></small>
-            </div>
-            <div class="form-isi">
-                <p>Nama barang</p>
-                <small class="form-input"><?= $tampilinventaris['nama_barang'];?></small>
-            </div>
-            <div class="form-isi">
-                <p>Tanggal pinjam</p>
-                <small class="form-input"><?= $tampil['tanggal_pinjam'];?></small>
-            </div>
-            <div class="form-isi">
-                <p>Tanggal kembali</p>
-                <input type="date" class="form-input border-merah" name="tanggal_kembali">
-            </div>
-            <div class="form-isi">
-                <p>Jumlah</p>
-                <small class="form-input"><?= $tampil['jumlah'];?></small>
-            </div>
-            <input type="submit" value="Kirim" class="form-submit mx-auto">
-        </form>
-    </div>
-</div>
+<div id="layoutSidenav_content">
+    <main>
+<div class="container-fluid px-4">
+                        <h1 class="mt-4">Tables</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Edit Inventaris</li>
+                        </ol>
+                   
+                        <div class="card mb-4">
+                        <form action="../../assets/sql/pengembalian/edit.php" method="POST">
+                        <div class="card-header">Edit Data Inventaris</div>
+                            <div class="card-body">
+                            <label for="exampleFormControlInput1" class="form-label">Id Peminjaman</label>
+                            <input class="form-control"  value="<?= $tampil['id_peminjaman'];?>" readonly >
+                            <label for="exampleFormControlInput1" class="form-label">Nama Barang</label>
+                            <input class="form-control" value="<?= $tampilinventaris['nama_barang'];?>" readonly >
+                            <label for="exampleFormControlInput1" class="form-label">Tanggal Pinjam</label>
+                            <input class="form-control" value="<?= $tampil['tanggal_pinjam'];?>" readonly >
+                            <label for="exampleFormControlInput1" class="form-label">Tanggal Kembali</label>
+                            <input type="date" class="form-control" name="tanggal_kembali">
+                            <label for="exampleFormControlInput1" class="form-label">Jumlah</label>
+                            <input class="form-control" value="<?= $tampil['jumlah'];?>" readonly >
+                            
+                           <div style="text-align:center;"><br>
+                           <input type="submit" value="Terima" class="btn btn-primary" >
+                        </div>
+                        </div>
+                        </form>
+                        </div>
+                </main>
+
+                </div>
 
 <?php
 include('../../assets/templates/app/footer.php');
